@@ -15,8 +15,10 @@ class InterfazGrafica(Frame):
 
             # ...
 
-        def mostrar_expresion_regular(self, expresion_regular):
-            print()
+        def mostrar_expresion_regular(self, automata):
+            # Accede a la expresión regular a través del atributo `expresion_regular`
+            expresion_regular = automata.expresion_regular.get_expresion_regular()
+            # ... (código para mostrar la expresión regular)
 
         def mostrar_automata(self, automata):
             print()

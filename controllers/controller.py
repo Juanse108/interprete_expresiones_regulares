@@ -1,4 +1,4 @@
-from models.automata import  AFN, AFD
+from models.automata import AFN, AFD
 from views.interfaz_grafica import InterfazGrafica
 
 
