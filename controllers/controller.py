@@ -1,6 +1,6 @@
-from models.expresion_regular import ExpresionRegular
-from models.automata import Automata
+from models.automata import  AFN, AFD
 from views.interfaz_grafica import InterfazGrafica
+
 
 class Controller:
     def __init__(self):
@@ -13,14 +13,34 @@ class Controller:
 
     def validar_expresion_regular(self, expresion_regular):
         try:
-            ExpresionRegular(expresion_regular)
+            import re
+            re.fullmatch(expresion_regular, "")
             return True
         except ValueError:
             return False
 
-    def crear_automata(self, expresion_regular):
-        self.expresion_regular = ExpresionRegular(expresion_regular)
-        self.automata = Automata(self.expresion_regular)
+    def crear_automata(self, expresion_regular, tipo_automata):
+        """Crea un autómata a partir de una expresión regular y devuelve información sobre el mismo."""
+        try:
+            # Validar la expresión regular
+            if not self.validar_expresion_regular(expresion_regular):
+                raise ValueError("Expresión regular no válida")
+
+            # Crear el autómata (AFN o AFD)
+            if tipo_automata == "AFN":
+                automata = AFN(expresion_regular)
+            else:
+                automata = AFD(expresion_regular)
+
+            # Obtener información del autómata
+            informacion = automata.get_informacion()
+
+            return automata, informacion
+
+        except (ValueError, TypeError) as e:
+            # Mostrar mensaje de error al usuario
+            self.interfaz_grafica.mostrar_error(e)
+            return None, None
 
     def obtener_informacion_automata(self):
         return self.automata.get_informacion()

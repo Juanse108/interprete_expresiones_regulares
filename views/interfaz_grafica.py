@@ -6,12 +6,23 @@ class InterfazGrafica(Frame):
         super().__init__()
         self.controller = controller
 
-        # Implementación de la interfaz gráfica
-        # utilizando la biblioteca tkinter
+        def __init__(self, controller):
+            super().__init__()
+            self.controller = controller
 
-        # Métodos para:
-        #   * Mostrar la expresión regular
-        #   * Mostrar el autómata
-        #   * Mostrar la información del autómata
-        #   * Permitir al usuario ingresar la expresión regular
-        #   * Permitir al usuario simular el autómata con una cadena de entrada
+            # Implementación de la interfaz gráfica
+            # utilizando la biblioteca tkinter
+
+            # ...
+
+        def mostrar_expresion_regular(self, expresion_regular):
+            print()
+
+        def mostrar_automata(self, automata):
+            print()
+
+        def mostrar_informacion_automata(self, informacion):
+            print()
+
+        def simular_cadena(self, cadena_entrada):
+            print()
