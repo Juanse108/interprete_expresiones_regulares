@@ -5,11 +5,11 @@ from models.expresion_regular import ExpresionRegular
 class Automata:
     def __init__(self, expresion_regular):
         self.expresion_regular = ExpresionRegular(expresion_regular)
-        self.estados = set()  # Set to store unique states
-        self.transiciones = {}  # Dictionary to store transitions (state -> {symbol: next_state})
+        self.estados = set()
+        self.transiciones = {}
         self.estado_inicial = None
         self.estados_finales = set()
-        self.grafo = None  # Placeholder for graph
+        self.grafo = None
 
     def _crear_grafo(self):
         """Abstract method to be implemented in subclasses (AFN and AFD)
@@ -17,7 +17,6 @@ class Automata:
         raise NotImplementedError("Subclass must implement _crear_grafo")
 
     def get_informacion(self):
-        """Returns information about the automaton."""
         informacion = {
             "estados": self.estados,
             "transiciones": self.transiciones,
@@ -28,7 +27,7 @@ class Automata:
         return informacion
 
     def get_alfabeto(self):
-        """Returns the alphabet (set of unique symbols) used in the automaton."""
+
         alfabeto = set()
         for estados, transiciones in self.transiciones.items():
             for simbolo, _ in transiciones.items():

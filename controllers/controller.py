@@ -20,7 +20,6 @@ class Controller:
             return False
 
     def crear_automata(self, expresion_regular, tipo_automata):
-        """Crea un autómata a partir de una expresión regular y devuelve información sobre el mismo."""
         try:
             # Validar la expresión regular
             if not self.validar_expresion_regular(expresion_regular):
