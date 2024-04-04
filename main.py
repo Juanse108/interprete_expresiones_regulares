@@ -5,4 +5,4 @@ if __name__ == "__main__":
         controller = Controller()
         controller.run()
     except Exception as e:
-        print(f"Un error inesperado ha ocurrido: {e}")
+        print(f"Un error ha ocurrido inesperado : {e}")
