@@ -6,6 +6,7 @@ LETTERS = 'abcdefghijklmnopqrstuvwxyz01234567890.'
 class DirectReader:
 
     def __init__(self, string: str):
+        self.curr_char = None
         self.string = iter(string.replace(' ', ''))
         self.input = set()
         self.rparPending = False
@@ -18,7 +19,7 @@ class DirectReader:
             self.curr_char = None
 
     def CreateTokens(self):
-        while self.curr_char != None:
+        while self.curr_char is not None:
 
             if self.curr_char in LETTERS:
                 self.input.add(self.curr_char)
@@ -27,7 +28,7 @@ class DirectReader:
                 self.Next()
 
                 # Finally, check if we need to add an append token
-                if self.curr_char != None and \
+                if self.curr_char is not None and \
                         (self.curr_char in LETTERS or self.curr_char == '('):
                     yield Token(TokenType.APPEND, '.')
 
@@ -36,22 +37,22 @@ class DirectReader:
 
                 self.Next()
 
-                if self.curr_char != None and self.curr_char not in '()':
+                if self.curr_char is not None and self.curr_char not in '()':
                     yield Token(TokenType.LPAR)
 
-                    while self.curr_char != None and self.curr_char not in ')*+?':
+                    while self.curr_char is not None and self.curr_char not in ')*+?':
                         if self.curr_char in LETTERS:
                             self.input.add(self.curr_char)
                             yield Token(TokenType.LETTER, self.curr_char)
 
                             self.Next()
-                            if self.curr_char != None and \
+                            if self.curr_char is not None and \
                                     (self.curr_char in LETTERS or self.curr_char == '('):
                                 yield Token(TokenType.APPEND, '.')
 
-                    if self.curr_char != None and self.curr_char in '*+?':
+                    if self.curr_char is not None and self.curr_char in '*+?':
                         self.rparPending = True
-                    elif self.curr_char != None and self.curr_char == ')':
+                    elif self.curr_char is not None and self.curr_char == ')':
                         yield Token(TokenType.RPAR, ')')
                     else:
                         yield Token(TokenType.RPAR, ')')
@@ -60,7 +61,7 @@ class DirectReader:
                 self.Next()
                 yield Token(TokenType.LPAR)
 
-            elif self.curr_char in (')*+?'):
+            elif self.curr_char in ')*+?':
 
                 if self.curr_char == ')':
                     self.Next()
@@ -83,7 +84,7 @@ class DirectReader:
                     self.rparPending = False
 
                 # Finally, check if we need to add an append token
-                if self.curr_char != None and \
+                if self.curr_char is not None and \
                         (self.curr_char in LETTERS or self.curr_char == '('):
                     yield Token(TokenType.APPEND, '.')
 

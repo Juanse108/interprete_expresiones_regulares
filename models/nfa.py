@@ -246,7 +246,7 @@ class NFA:
 
     def EvalNext(self, eval_symbol, curr_state, eval_regex):
 
-        if self.regexAccepted != None:
+        if self.regexAccepted is not None:
             return
 
         transitions = self.trans_func[curr_state]
@@ -258,7 +258,7 @@ class NFA:
                     return
 
                 for state in transitions['e']:
-                    if self.regexAccepted != None:
+                    if self.regexAccepted is not None:
                         break
                     self.EvalNext(eval_symbol, state, eval_regex)
 
@@ -277,10 +277,10 @@ class NFA:
                     elif str(self.accepting_states) != curr_state:
                         for state in transitions[trans_symbol]:
                             self.EvalNext('e', state, None)
-                        if self.regexAccepted != None:
+                        if self.regexAccepted is not None:
                             return
 
-                if self.regexAccepted != None:
+                if self.regexAccepted is not None:
                     return
 
                 for state in transitions[trans_symbol]:

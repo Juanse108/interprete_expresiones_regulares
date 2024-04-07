@@ -56,6 +56,7 @@ class DDFA:
 
     def CalcNewStates(self, state, curr_state):
 
+        global state_ref
         if not self.states:
             self.states.append(set(state))
             if self.augmented_state in state:
@@ -128,7 +129,7 @@ class DDFA:
 
     def LetterNode(self, node):
         new_node = Node(self.iter, [self.iter], [
-                        self.iter], value=node.value, nullable=False)
+            self.iter], value=node.value, nullable=False)
         self.nodes.append(new_node)
         return new_node
 

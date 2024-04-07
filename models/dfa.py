@@ -27,8 +27,10 @@ class DFA:
         self.iterations = 0
         self.regex = regex
 
-    def MoveTo(self, node_id, eval_symbol='e', array=[], add_initial=False, move_once=False):
+    def MoveTo(self, node_id, eval_symbol='e', array=None, add_initial=False, move_once=False):
 
+        if array is None:
+            array = []
         arr = array
         node = self.nodes[node_id]
         # Recorremos el nodo si no está visitado
@@ -54,9 +56,10 @@ class DFA:
 
         return list(set(arr))
 
-    def EvaluateClosure(self, closure, node,  curr_state):
+    def EvaluateClosure(self, closure, node, curr_state):
 
         # Estado inicial no creado?
+        global value
         if not closure:
             closure = self.MoveTo(0, add_initial=True)
             closure.append(0)
@@ -81,7 +84,7 @@ class DFA:
                     e_closure += self.MoveTo(e_value)
                     [node.UnMark() for node in self.nodes]
 
-                new_set += list(set([*symbol_closure, *e_closure]))
+                new_set += list({*symbol_closure, *e_closure})
 
                 # Si este nuevo estado no existe es nuevo...
                 if not new_set in self.states.values():
