@@ -1,8 +1,5 @@
 from graphviz import Digraph
-from pprint import pprint
-from nodes import Or
-from tokens import TokenType
-from utils import WriteToFile
+from utils.utils import WriteToFile
 
 
 class NFA:
@@ -306,7 +303,6 @@ NFA:
 - Estado final: {self.accepting_states}
 - Tabla de transición:
         '''
-        # print(debug_string)
-        # pprint(self.trans_func)
-        WriteToFile('./output/NFA.gv', source)
-        self.dot.render('./output/NFA.gv', view=True)
+
+        WriteToFile('tests/NFA.gv', source)
+        self.dot.render('tests/NFA.gv', view=True)

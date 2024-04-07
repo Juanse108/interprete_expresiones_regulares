@@ -1,16 +1,12 @@
 digraph {
 	fake [style=invisible]
-	C
-	D
-	E
 	B
-	F [shape=doublecircle]
+	D [shape=doublecircle]
+	C
 	A [root=true]
 	fake -> A [style=bold]
-	A -> B [label=a]
 	B -> C [label=b]
-	E -> F [label=d]
+	A -> B [label=a]
 	C -> D [label=b]
-	D -> E [label=b]
 	rankdir=LR
 }

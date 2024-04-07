@@ -5,13 +5,25 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="324010a6-e4b8-4a62-926e-5330db4343cb" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/interprete_expresiones_regulares.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/interprete_expresiones_regulares.iml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/controllers/controller.py" beforeDir="false" afterPath="$PROJECT_DIR$/controllers/controller.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/main.py" beforeDir="false" afterPath="$PROJECT_DIR$/main.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/models/automata.py" beforeDir="false" afterPath="$PROJECT_DIR$/models/automata.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/models/expresion_regular.py" beforeDir="false" afterPath="$PROJECT_DIR$/models/expresion_regular.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tests/test_interprete.py" beforeDir="false" afterPath="$PROJECT_DIR$/tests/test_interprete.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/models/automata.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/models/dfa.py" beforeDir="false" afterPath="$PROJECT_DIR$/models/dfa.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/models/direct_dfa.py" beforeDir="false" afterPath="$PROJECT_DIR$/models/direct_dfa.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/models/direct_reader.py" beforeDir="false" afterPath="$PROJECT_DIR$/models/direct_reader.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/models/expresion_regular.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/models/main.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/models/nfa.py" beforeDir="false" afterPath="$PROJECT_DIR$/models/nfa.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/models/output/DFA.gv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/models/output/DFA.gv.pdf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/models/output/DirectDFA.gv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/models/output/DirectDFA.gv.pdf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/models/output/NFA.gv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/models/output/NFA.gv.pdf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/models/parsing.py" beforeDir="false" afterPath="$PROJECT_DIR$/models/parsing.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/models/reader.py" beforeDir="false" afterPath="$PROJECT_DIR$/models/reader.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/models/utils.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/tests/test_interprete.py" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -62,6 +74,7 @@
     "Python.main (1).executor": "Run",
     "Python.main.executor": "Run",
     "Python.test_interprete.executor": "Run",
+    "Python.utils.executor": "Run",
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "git-widget-placeholder": "prueba",
@@ -74,7 +87,7 @@
       <recent name="C:\Users\sebas\Desktop\2024-1\automatas\interprete_expresiones_regulares\models" />
     </key>
   </component>
-  <component name="RunManager" selected="Python.main (1)">
+  <component name="RunManager" selected="Python.main">
     <configuration name="main (1)" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
       <module name="interprete_expresiones_regulares" />
       <option name="ENV_FILES" value="" />
@@ -141,11 +154,34 @@
       <option name="INPUT_FILE" value="" />
       <method v="2" />
     </configuration>
+    <configuration name="utils" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+      <module name="interprete_expresiones_regulares" />
+      <option name="ENV_FILES" value="" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/models" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/models/utils.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Python.main" />
+        <item itemvalue="Python.utils" />
         <item itemvalue="Python.main (1)" />
         <item itemvalue="Python.test_interprete" />
-        <item itemvalue="Python.main" />
       </list>
     </recent_temporary>
   </component>

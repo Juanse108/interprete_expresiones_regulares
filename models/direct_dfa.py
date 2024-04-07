@@ -1,7 +1,5 @@
 from pythomata import SimpleDFA
-from graphviz import Digraph
-from utils import WriteToFile
-from pprint import pprint
+from utils.utils import WriteToFile
 
 RAW_STATES = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ'
 
@@ -240,8 +238,8 @@ class DDFA:
         graph.attr(rankdir='LR')
 
         source = graph.source
-        WriteToFile('./output/DirectDFA.gv', source)
-        graph.render('./output/DirectDFA.gv', format='pdf', view=True)
+        WriteToFile('tests/DirectDFA.gv', source)
+        graph.render('tests/DirectDFA.gv', format='pdf', view=True)
 
 
 class Node:
