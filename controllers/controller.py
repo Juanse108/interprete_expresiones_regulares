@@ -1,4 +1,4 @@
-from models.automata import AFN, AFD
+from models.automata import AFN, AFD, Automata
 from views.interfaz_grafica import InterfazGrafica
 
 
@@ -45,5 +45,4 @@ class Controller:
     def obtener_informacion_automata(self):
         return self.automata.get_informacion()
 
-    def simular_automata(self, cadena_entrada):
-        return self.automata.simular(cadena_entrada)
+

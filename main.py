@@ -1,3 +1,4 @@
+from graphviz import Digraph
 from controllers.controller import Controller
 
 if __name__ == "__main__":
